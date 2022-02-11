@@ -21,7 +21,6 @@
                 
                 <a class="dropdown-item" href="autos.php">Autos</a>
                 <a class="dropdown-item" href="camionetas.php">Camionetas</a>
-                <a class="dropdown-item" href="autocaravanas.php">Autocaravanas</a>
                 <a class="dropdown-item" href="deportivos.php">Deportivos</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="index.php">Ver todos</a>
