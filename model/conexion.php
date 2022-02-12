@@ -1,7 +1,7 @@
 <?php
 $usuario = "root";
 $contrasena = "";
-$nombre_bd = "concesionaria";
+$nombre_bd = "concesionario";
 
 try {
 	$bd = new PDO (

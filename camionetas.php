@@ -44,6 +44,9 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
     <!-- fin vehiculos -->
+    <!-- inicio footer -->
+   <?php include 'maqueta/footer.php' ?>
+    <!-- fin footer -->  
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

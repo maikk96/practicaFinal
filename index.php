@@ -44,10 +44,10 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
     <!-- fin vehiculos -->
-    <div class="container bg-light text-center p-3 mt-5">
-      <p>Todos los derechos reservados. </p>
-    </div>
-        
+   
+     <!-- inicio footer -->
+    <?php include 'maqueta/footer.php' ?>
+    <!-- fin footer -->   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
