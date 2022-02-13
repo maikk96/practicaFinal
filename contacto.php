@@ -1,8 +1,3 @@
-<?php
-include 'model/conexion.php';
-$sentencia = $bd->query('select * from usuarios');
-$vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
-?>
 
 
 <!doctype html>
@@ -20,4 +15,4 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
   <body>
     <!-- inicio menú -->
     <?php include 'maqueta/menu.php' ?>
-
+    <!-- fin menú -->

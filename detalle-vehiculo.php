@@ -44,10 +44,10 @@ $vehiculo = $sentencia->fetch(PDO::FETCH_OBJ);
   <div class="container"> 
       <img src="img/<?php echo $vehiculo->foto1; ?>"  style="width: 285px; height: 185px;" class="rounded float-start" alt="">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="img/<?php echo $vehiculo->foto2; ?>"  style="width: 285px; height: 185px;" class="rounded float-end" alt="">
+      <img src="img/<?php echo $vehiculo->foto2; ?>"  style="width: 285px; height: 185pxm-4;" class="rounded float-end" alt="">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="img/<?php echo $vehiculo->foto3; ?>"  style="width: 285px; height: 185px;" class="rounded float-end" alt="">
-  <div class="card-body">
+      <img src="img/<?php echo $vehiculo->foto3; ?>"  style="width: 285px; height: 185px;p-4" class="rounded float-end" alt="">
+  <div class="card-bodyp-3">
     <h5 class="card-title"> <?php echo $vehiculo->nomVehiculo; ?></h5>
     <img src="img/icons8-us-dollar-circled.gif" style="width: 50px; height: 50px;" /> 
     <p class="card-text"> <small class="text-primary"><?php echo $vehiculo->precio;?>€</small></p>
@@ -132,6 +132,7 @@ $vehiculo = $sentencia->fetch(PDO::FETCH_OBJ);
                 <tbody>
             </table>
             </div>
+           
       <!-- inicio footer -->
     <?php include 'maqueta/footer.php' ?>
     <!-- fin footer -->  

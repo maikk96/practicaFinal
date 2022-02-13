@@ -1,4 +1,4 @@
-  <div class="container">
+  <div class="container p-4">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php"><img src="img/logo3.png"> Concesionario Nuevo Motor</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,19 +27,18 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="contacto.php">Contacto</a>
             </li>
           </ul>
           
-          <div class="btn-toolbar"> 
-         <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-primary my-2 my-sm-0   mr-3" type="submit">Registrate</button>
-
+          <div class=" container-form btn-toolbar"> 
+         <form class="form-inline ">
+            <a class="btn btn-outline-primary my-2 my-sm-0   mr-3" href="login.php">Log In</a>
         
 
           </form>
           <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-danger my-2 my-sm-0 mr-3" type="submit">vende tu coche</button>
+          <a class="btn btn-outline-danger my-2 my-sm-0   mr-3" href="vender.php">Vende tu coche</a>
           </form>
           
           </div>

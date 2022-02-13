@@ -44,6 +44,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
     <!-- fin vehiculos -->
+    <?php include 'maqueta/general.php' ?>
     <!-- inicio footer -->
    <?php include 'maqueta/footer.php' ?>
     <!-- fin footer -->  
