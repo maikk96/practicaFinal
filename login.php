@@ -1,7 +1,7 @@
 <?php
 include 'model/conexion.php';
 $sentencia = $bd->query('select * from usuarios');
-$vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
+$usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +29,10 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <?php include 'maqueta/menu.php' ?>
 <div class= "container  p-10 bg-light">
 
-    <form class="row  needs-validation" novalidate>
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"class="row  needs-validation" novalidate>
        <div class=" container  col-md-6 ">
-         <label for="validationCustom01" class="form-label">Usuario</label>
-         <input type="text" class="form-control" id="validationCustom01"  required>
+         <label for="validationCustom01"  class="form-label">Usuario</label>
+         <input type="text" name="usuario" class="form-control" id="validationCustom01"  required>
            <div class="valid-feedback">
             No es correcto!
            </div>
@@ -42,7 +42,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
         
         <div class=" container  col-md-7 container-form">
            <label for="validationCustom02" class="form-label">contraseña</label>
-           <input type="text" class="form-control" id="validationCustom02"  required>
+           <input type="text" name="clave" class="form-control" id="validationCustom02"  required>
            <div class="valid-feedback">
              No es correcto!
              </div>
@@ -59,7 +59,12 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                 </div>
             </div>
         </div>
-        
+        <?php if(!empty($error)): ?>
+            <div class="mensaje">
+                <?php echo $error; ?>
+            </div>
+            <?php endif; ?>
+            
         <div class=" form d-grid gap-2 col-7 mx-auto p-4">
 
               
@@ -83,7 +88,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
 
 
-<script src="js/jquery.js"></script>
-<script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
