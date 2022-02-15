@@ -18,7 +18,6 @@
                 Modelos de Vehículos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                
                 <a class="dropdown-item" href="autos.php">Autos</a>
                 <a class="dropdown-item" href="camionetas.php">Camionetas</a>
                 <a class="dropdown-item" href="deportivos.php">Deportivos</a>
@@ -27,20 +26,16 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.php">Contacto</a>
+              <a class="nav-link" href="tasacion.php">Tasación</a>
             </li>
           </ul>
-          
-          <div class=" container-form btn-toolbar"> 
+          <div class=" container-form btn-toolbar">
          <form class="form-inline ">
             <a class="btn btn-outline-primary my-2 my-sm-0   mr-3" href="login.php">Log In</a>
-        
-
           </form>
           <form class="form-inline my-2 my-lg-0">
           <a class="btn btn-outline-danger my-2 my-sm-0   mr-3" href="vender.php">Vende tu coche</a>
           </form>
-          
           </div>
         </div>
       </nav>

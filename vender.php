@@ -125,8 +125,5 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                   </div>
                 </div>
               </div>
-            
-          
-        
 
     <?php include 'maqueta/footer.php' ?>

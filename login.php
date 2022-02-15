@@ -16,13 +16,9 @@ $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Tienda de Vehículos</title>
-    
+    <title>Tienda de Vehículos - Log In</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    
-
     <link rel="stylesheet" href="css/style.css">
-    
 </head>
 <body>
 <!-- inicio menú -->
@@ -37,9 +33,6 @@ $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
             No es correcto!
            </div>
         </div>
-        
-         
-        
         <div class=" container  col-md-7 container-form">
            <label for="validationCustom02" class="form-label">contraseña</label>
            <input type="text" name="clave" class="form-control" id="validationCustom02"  required>
@@ -47,7 +40,6 @@ $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
              No es correcto!
              </div>
          </div>
-  
         <div class=" container col-7 p-3">
           <div class=" form-check ">
               <input class="  form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -64,18 +56,13 @@ $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
                 <?php echo $error; ?>
             </div>
             <?php endif; ?>
-            
         <div class=" form d-grid gap-2 col-7 mx-auto p-4">
-
-              
-              
               <a href="registro.php">
                 <button class="btn btn-primary ml-4" type="button">Registrate</button>
               </a>
         </div>
    </form>
-     
-</div> 
+</div>
 
 <?php include 'maqueta/general.php' ?>
 <?php include 'maqueta/footer.php' ?>

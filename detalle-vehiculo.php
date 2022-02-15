@@ -41,7 +41,7 @@ $vehiculo = $sentencia->fetch(PDO::FETCH_OBJ);
       </div>
     </div>
     <!-- fin detalle -->
-  <div class="container"> 
+  <div class="container">
       <img src="img/<?php echo $vehiculo->foto1; ?>"  style="width: 285px; height: 185px;" class="rounded float-start" alt="">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <img src="img/<?php echo $vehiculo->foto2; ?>"  style="width: 285px; height: 185pxm-4;" class="rounded float-end" alt="">
@@ -49,15 +49,14 @@ $vehiculo = $sentencia->fetch(PDO::FETCH_OBJ);
       <img src="img/<?php echo $vehiculo->foto3; ?>"  style="width: 285px; height: 185px;p-4" class="rounded float-end" alt="">
   <div class="card-bodyp-3">
     <h5 class="card-title"> <?php echo $vehiculo->nomVehiculo; ?></h5>
-    <img src="img/icons8-us-dollar-circled.gif" style="width: 50px; height: 50px;" /> 
+    <img src="img/icons8-us-dollar-circled.gif" style="width:50px;height:50px;">
     <p class="card-text"> <small class="text-primary"><?php echo $vehiculo->precio;?>€</small></p>
   </div>
   </div>
-  <!-- Tabla Renault Diesel-->  
+  <!-- Tabla vehiculo-->
   <div class="container mt-5">
-    
-  
- <table class="specifications-car-table table-secondary col-md-12">
+
+<table class="specifications-car-table table-secondary col-md-12">
                 <thead>
                 <tr>
                     <th colspan="2 ">Prestaciones</th>
@@ -91,7 +90,6 @@ $vehiculo = $sentencia->fetch(PDO::FETCH_OBJ);
                     <td>Largo/Ancho/Alto</td>
                     <td> <?php echo $vehiculo->dimensiones; ?> </td>
                 </tr>
-                    
                 <tr>
                     <td>Maletero</td>
                     <td> <?php echo $vehiculo->maletero; ?> </td>
@@ -115,13 +113,12 @@ $vehiculo = $sentencia->fetch(PDO::FETCH_OBJ);
                     <td>Potencia combustión</td>
                     <td> <?php echo $vehiculo->potencia; ?> </td>
                 </tr>
-                
                 <thead>
                 <tr>
                     <th colspan="2">Transmisión</th>
                 </tr>
                 </thead>
-                <tbody>                    
+                <tbody>
                 <tr>
                     <td>Cambio</td>
                     <td> <?php echo $vehiculo->cambio; ?> </td>
@@ -132,11 +129,9 @@ $vehiculo = $sentencia->fetch(PDO::FETCH_OBJ);
                 <tbody>
             </table>
             </div>
-           
       <!-- inicio footer -->
     <?php include 'maqueta/footer.php' ?>
-    <!-- fin footer -->  
-          
+    <!-- fin footer -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

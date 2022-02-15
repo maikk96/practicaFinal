@@ -6,8 +6,7 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">Entrega a domicilio</h5>
-        <p class="card-text">Entregamos el vehículo adquirido en cualquier parte de la península..</p>
-       
+        <p class="card-text">Entregamos el vehículo adquirido en cualquier parte de la península.</p>
       </div>
     </div>
   </div>
@@ -21,7 +20,6 @@
       <div class="card-body">
         <h5 class="card-title">Compramos tu antiguo coche.</h5>
         <p class="card-text">Tasaciones gratuitas. Nos encargamos de todos los aspectos legales.</p>
-        
       </div>
     </div>
   </div>
