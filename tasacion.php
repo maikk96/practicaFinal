@@ -1,4 +1,8 @@
-
+<?php
+$usuario = 'root';
+$password = "";
+$db = new PDO ('mysql:host=localhost;dbname=concesionario',$usuario,$password);
+?>
 
 <!doctype html>
 <html lang="es">
@@ -24,25 +28,19 @@
                 <div class="card-body">
                   <h5 class="card-title">Tasación gratuita. Introduce los datos de tu vehiculo</h5>
                   <p class="card-text">MARCA</p>
-  
                   <div class="select-error-wrapper">
                               <div class="container" >
-                                <select data-qa-selector="step-marke" class="active focus"><option disabled="" 
-                                value="0">Seleccionar marca</option>
-                                  <option >Alfa Romeo</option>
-                                  <option >Alpina</option>
-                                  <option >Aston Martin</option>
-                                  <option >Audi</option>
-                                  <option >BMW</option>
-                                  <option >Cadillac</option>
-                                  <option >Chevrolet</option>
-                                  <option >Chrysler</option>
-                                  <option >Citroen</option>
-                                  <option >Cupra</option>
-                                  <option >Fiat</option>
-                                  <option >Ford</option><option value="340">Honda</option>
-                                  <option >Hyundai</option>
-                                  </option>
+                                <select data-qa-selector="step-marke" class="active focus">
+                                  <option disabled=""value="0">Seleccionar marca</option>
+                                <?php
+                                    $sentencia = $bd->prepare("SELECT * FORM marca");
+                                    $sentencia->execute();
+                                    $marca = $sentencia->fetchAll();
+                                
+                                foreach ($marca as $valores):
+                                  echo ' <option value = "'.$valores["MarcID"].'">'.$valores["MarcDesc"].'</option>';
+                                endforeach;
+                                ?>
                                 </select>
                               </div>
                             </div>

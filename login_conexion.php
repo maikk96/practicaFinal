@@ -1,32 +1,31 @@
-<?php session_start();
+<?php
+session_start();
+if(isset($_SESSION["usuario"])){
+session_destroy();
+}
+include_once 'model/conexion.php';
+$ref=@$_GET['q'];
+$usuario = $_POST['usuario'];
+$contraseña = $_POST['contraseña'];
 
-    if(isset($_SESSION['usuario'])) {
-        header('location: index.php');
-    }
+$usuario = stripslashes($usuario);//quita barras
+$usuario = addslashes($usuario);//añade barras
+$contraseña = stripslashes($contraseña); 
+$contraseña = addslashes($contraseña);
+$contraseña=md5($contraseña); //funcion md5 para encriptar la contraseña
+$result = $bd->query("SELECT nombre FROM usuarios WHERE usuario = '$usuario' and contraseña = '$contraseña'") or die('Error');
+$count=$result->rowCount;
 
-    $error = '';
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $usuario = $_POST['usuario'];
-        $clave = $_POST['clave'];
-        $clave = hash('sha512', $clave);
-        try{
-            $conexion = new PDO('mysql:host=localhost;dbname=concesionario', 'root', '');
-            }catch(PDOException $prueba_error){
-                echo "Error: " . $prueba_error->getMessage();
-            }
-        $statement = $conexion->prepare('
-        SELECT * FROM login WHERE usuario = :usuario AND clave = :clave'
-        );
-        $statement->execute(array(
-            ':usuario' => $usuario,
-            ':clave' => $clave
-        ));
-        $resultado = $statement->fetch();
-        if ($resultado !== false){
-            $_SESSION['usuario'] = $usuario;
-            header('location: principal.php');
-        }else{
-            $error .= '<i>Este usuario no existe</i>';
-        }
-    }
-require 'login.php';
+if($count==1){
+while($row = $result->fetchAll()) {
+	$usuario = $row['usuario'];
+}
+$_SESSION["usuario"] = $usuario;
+$_SESSION["nombre"] = $nombre;
+header("location:account.php?q=1");
+}
+else
+header("location:$ref?w=Usuario o contraseña incorrectos");
+
+
+?>

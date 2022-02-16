@@ -53,22 +53,7 @@
     }
   }
 
-  function emailExiste($email){
-    global $mysqli;
-
-    $stmt = $mysqli->prepare("SELECT id FROM usuarios WHERE correo = ? LIMIT 1");
-    $stmt->bind_param("s", $usuario);
-    $stmt->execute();
-    $stmt->store_result();
-    $num = $stmt->num_rows();
-    $stmt->close();
-
-    if($num >0){
-      return true;
-    }else{
-      return false;
-    }
-  }
+ 
 
   function generateToken(){
     $gen = md5(uniqid(mt_rand(),false));
@@ -80,16 +65,22 @@
     return $hash;
   }
 
-  function registraUsuario($nombre, $usuario, $email, $pass_hash, $activo, $token, $tipo_usuario){
-    global $mysqli;
+  function registraUsuario($nombre,$apellidos,$usuario,$email,$telefono,$pass_hash){
+    global $bd;
 
-    $stmt = $mysqli->prepare("INSERT INTO usuarios (usuario, password, nombre, tipo_usuario, correo, activacion, token) VALUES (?,?,?,?,?,?,?)");
-    $stmt->bind_param('sssisis',$usuario,$pass_hash,$nombre,$tipo_usuario,$email,$activo,$token);
+    $stmt = $bd->prepare("INSERT INTO usuarios (nombre, apellidos, usuario, correo, telefono, contraseña) VALUES (:nombre, :apellidos, :usuario, :correo, :telefono, :contraseña)");
+    $stmt->bindParam(':nombre',$nombre);
+    $stmt->bindParam(':apellidos',$apellidos);
+    $stmt->bindParam(':usuario',$usuario);
+    $stmt->bindParam(':correo',$$email);
+    $stmt->bindParam(':telefono',$telefono);
+    $stmt->bindParam(':contraseña',$pass_hash);
+
 
     if($stmt->execute()){
-      return $mysqli->insert_id;
+      echo "Datos guardados correctamente";
     }else {
-      return 0;
+      return "No se han guardado los datos";
     }
   }
   /*function enviarEmail($email, $nombre, $asunto, $cuerpo){
