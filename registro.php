@@ -75,6 +75,7 @@ include 'model/conexion.php';
                     </div>
                 </main>
             </div>
+        </div>
 
 
 <?php include 'maqueta/general.php' ?>
