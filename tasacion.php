@@ -7,6 +7,10 @@ $marca = $sentencia->fetchAll();
 $sentencia2 = $bd->prepare("SELECT * FROM modelomarca");
 $sentencia2->execute();
 $modelo = $sentencia2->fetchAll();
+
+$consulta = $bd->prepare("SELECT * FROM modelomarca mo, marca m WHERE mo.MarcID=m.MarcID ");
+$consulta->execute();
+$modeloMarca = $consulta->fetchAll();
 ?>
 
 <!doctype html>
@@ -56,8 +60,9 @@ $modelo = $sentencia2->fetchAll();
                         <div class="form-group">
                           <select data-qa-selector="step-marke" class="form-control" name="modelo[]">
                             <?php
-                            foreach ($modelo as $datos) :
-                              echo ' <option value = "' . $datos["ModelId"] . '">' . $datos["ModelDesc"] . '</option>';
+                            foreach ($modeloMarca as $datos) :
+                              echo ' <option value = "' . $datos["ModelId"] . '">' . $datos["ModelDesc"] . '</option>' ;
+                              //echo $datos['MarcID']; 
                             endforeach;
                             ?>
                           </select>
@@ -65,7 +70,7 @@ $modelo = $sentencia2->fetchAll();
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <select data-qa-selector="step-marke" class="form-control" name="fecha[]">
+                          <select data-qa-selector="step-marke" class="form-control" name="año[]">
                             <option disable="" value="0">MATRICULACION</option>
                             <option value="1">2022</option>
                             <option value="2">2021</option>
