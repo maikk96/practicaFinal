@@ -60,10 +60,6 @@
     return $gen;
   }
 
-  function hashPassword($password){
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-    return $hash;
-  }
 
   function registraUsuario($nombre,$apellidos,$usuario,$email,$telefono,$pass_hash){
     global $bd;

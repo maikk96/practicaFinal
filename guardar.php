@@ -9,11 +9,9 @@ $telefono = $_POST['telefono'];
 $correo = $_POST['correo'];
 $contraseña = $_POST['contraseña'];
 
-$hash = hashPassword($contraseña);
+$hash = hash('sha256',$contraseña);
 
-$stmt = $bd->query("INSERT INTO usuarios VALUES ('','$nombre', '$apellidos', '$usuario', '$correo', '$telefono', '$contraseña')");
-
-
+$stmt = $bd->query("INSERT INTO usuarios VALUES ('','$nombre', '$apellidos', '$usuario', '$correo', '$telefono', '$hash')");
 
 
 if($stmt)
@@ -22,7 +20,7 @@ session_start();
 $_SESSION["usuario"] = $usuario;
 $_SESSION["nombre"] = $nombre;
 
-header("location:account.php?q=1");
+header("location:registro_completado.php?q=1");
 }
 else
 {
