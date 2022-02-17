@@ -25,8 +25,9 @@ try{
         $_SESSION["usuario"] = $usuario;
         header("location:account.php?q=1");
         }
-        else
-        header("location:$ref?w=Usuario o contraseña incorrectos");
+        else{
+            echo '<p>El usuario y/o clave son incorrectas, vuelva a intentarlo.</p>';
+        }
 }catch(PDOException $e){
     echo'{"error":{"text":'. $e->getMessage() .'}}';
 }
