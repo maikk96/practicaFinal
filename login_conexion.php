@@ -14,17 +14,13 @@ try{
     $usuario = addslashes($usuario);//añade barras
     $contraseña = stripslashes($contraseña);
     $contraseña = addslashes($contraseña);
-    $hash_password = hash('sha256',$contraseña); //funcion hash para encriptar la contraseña
-    $result = $bd->prepare("SELECT id FROM usuarios WHERE usuario=:usuario AND contraseña=:hash_password");
-    $result->bindParam("usuario",$usuario,PDO::PARAM_STR);
-    $result->bindParam("hash_password",$hash_password,PDO::PARAM_STR);
-    $result->execute();
+    //$contraseña = md5($contraseña); //funcion hash para encriptar la contraseña
+    $result = $bd->query("SELECT id FROM usuarios WHERE usuario= '$usuario' AND contraseña= '$contraseña'");
+    /*$result->execute();*/
     $count=$result->rowCount();
 
     if($count==1){
-        while($row = $result->fetch(PDO::FETCH_OBJ)) {
-            $usuario = $row['id'];
-        }
+
         $_SESSION["id"] = $id;
         $_SESSION["usuario"] = $usuario;
         header("location:account.php?q=1");
