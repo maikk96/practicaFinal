@@ -14,11 +14,7 @@ $hash = hashPassword($contraseña);
 $stmt = $bd->query("INSERT INTO usuarios VALUES ('','$nombre', '$apellidos', '$usuario', '$correo', '$telefono', '$contraseña')");
 
 
-if($stmt->execute()){
-  echo "Datos guardados correctamente";
-}else {
-  return "No se han guardado los datos";
-}
+
 
 if($stmt)
 {
