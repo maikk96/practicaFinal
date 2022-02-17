@@ -20,7 +20,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
   </head>
   <body>
     <!-- inicio menú -->
-    <?php include 'maqueta/menu.php' ?>
+    <?php include 'maqueta/menu_account.php' ?>
     <!-- fin menú -->
 
     <!-- vehiculos -->

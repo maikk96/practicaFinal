@@ -31,10 +31,10 @@
           </ul>
           <div class=" container-form btn-toolbar">
          <form class="form-inline ">
-            <a class="btn btn-outline-primary my-2 my-sm-0   mr-3" href="login.php">Log In</a>
+            <a class="btn btn-outline-primary my-2 my-sm-0   mr-3" href="login.php">Iniciar sesion</a>
           </form>
           <form class="form-inline my-2 my-lg-0">
-          <a class="btn btn-outline-danger my-2 my-sm-0   mr-3" href="vender.php">Vende tu coche</a>
+          <a class="btn btn-outline-primary my-2 my-sm-0   mr-3" href="registro.php">Regístrate</a>
           </form>
           </div>
         </div>

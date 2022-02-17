@@ -21,7 +21,11 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
 <body>
   <!-- inicio menú -->
-  <?php include 'maqueta/menu.php' ?>
+  <?php
+    include 'maqueta/menu_account.php';
+
+  ?>
+
   <div class="container  p-10 bg-light">
 
     <div class="card-body">

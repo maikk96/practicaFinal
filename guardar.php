@@ -9,7 +9,7 @@ $telefono = $_POST['telefono'];
 $correo = $_POST['correo'];
 $contraseña = $_POST['contraseña'];
 
-$md5 = md5($contraseña);
+$contraseña = hash('sha256',$contraseña);
 
 $stmt = $bd->query("INSERT INTO usuarios VALUES ('','$nombre', '$apellidos', '$usuario', '$correo', '$telefono', '$contraseña')");
 

@@ -15,6 +15,7 @@ try{
     $contraseña = stripslashes($contraseña);
     $contraseña = addslashes($contraseña);
     //$contraseña = md5($contraseña); //funcion hash para encriptar la contraseña
+    $contraseña = hash('sha256',$contraseña);
     $result = $bd->query("SELECT id FROM usuarios WHERE usuario= '$usuario' AND contraseña= '$contraseña'");
     /*$result->execute();*/
     $count=$result->rowCount();
