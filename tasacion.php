@@ -61,7 +61,7 @@ $modeloMarca = $consulta->fetchAll();
                           <select data-qa-selector="step-marke" class="form-control" name="modelo[]">
                             <?php
                             foreach ($modeloMarca as $datos) :
-                              echo ' <option value = "' . $datos["ModelId"] . '">' . $datos["ModelDesc"] . '</option>' ;
+                              echo ' <option value = "' . $marca["MarcID"] . '">' . $datos["ModelDesc"] . '</option>' ;
                               //echo $datos['MarcID']; 
                             endforeach;
                             ?>
