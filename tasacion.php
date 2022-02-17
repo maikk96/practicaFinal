@@ -1,16 +1,19 @@
 <?php
 include 'model/conexion.php';
-$sentencia = $bd->prepare("SELECT * FROM marca");
-$sentencia->execute();
-$marca = $sentencia->fetchAll();
+$query = $bd->query("SELECT * FROM marca");
+$marca = array();
+while($r=$query->fetchObject()){ $marca[]=$r; }
 
 $sentencia2 = $bd->prepare("SELECT * FROM modelomarca");
 $sentencia2->execute();
 $modelo = $sentencia2->fetchAll();
 
-$consulta = $bd->prepare("SELECT * FROM modelomarca mo, marca m WHERE mo.MarcID=m.MarcID ");
+/*$consulta = $bd->prepare("SELECT * FROM modelomarca mo, marca m WHERE mo.MarcID=m.MarcID ");
 $consulta->execute();
 $modeloMarca = $consulta->fetchAll();
+$consulta = $bd->prepare("select * from modelomarca where MarcID = '$seleccionada'");
+$consulta->execute();
+$modeloMarca = $consulta->fetchAll();*/
 ?>
 
 <!doctype html>
@@ -20,7 +23,7 @@ $modeloMarca = $consulta->fetchAll();
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <script type="text/javascript" src="js/jquery.min.js"></script>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 
@@ -47,24 +50,19 @@ $modeloMarca = $consulta->fetchAll();
                     <div class="form-row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <select data-qa-selector="step-marke" class="form-control" name="marca[]">
+                          <select id="MarcID" data-qa-selector="step-marke" class="form-control" name="MarcID">
                             <?php
-                            foreach ($marca as $valores) :
-                              echo ' <option value = "' . $valores["MarcID"] . '">' . $valores["MarcDesc"] . '</option>';
-                            endforeach;
+                            foreach ($marca as $m) :?>
+                              <option value="<?php echo $m->MarcID; ?>"><?php echo $m->MarcDesc; ?></option>;
+                              <?php endforeach;
                             ?>
                           </select>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <select data-qa-selector="step-marke" class="form-control" name="modelo[]">
-                            <?php
-                            foreach ($modeloMarca as $datos) :
-                              echo ' <option value = "' . $datos["ModelId"] . '">' . $datos["ModelDesc"] . '</option>' ;
-                              //echo $datos['MarcID']; 
-                            endforeach;
-                            ?>
+                          <select id="ModelId" data-qa-selector="step-marke" class="form-control" name="ModelId">
+                          <option value="">-- SELECCIONE --</option>
                           </select>
                         </div>
                       </div>
@@ -119,12 +117,26 @@ $modeloMarca = $consulta->fetchAll();
  <!-- fin vehiculos -->
   <!-- inicio footer -->
   <?php include 'maqueta/footer.php' ?>
+
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$("#MarcID").change(function(){
+			$.get("modelo.php","MarcID="+$("#MarcID").val(), function(data){
+				$("#ModelId").html(data);
+				console.log(data);
+			});
+		});
+	});
+    
+</script>
   <!-- fin footer -->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
