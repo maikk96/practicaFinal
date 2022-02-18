@@ -11,7 +11,7 @@
           <a class="nav-link" href="account.php">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
+          <a class="nav-link" href="nosotros.php">Nosotros</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,10 +32,17 @@
       <div class=" container-form btn-toolbar">
         <?php
         include_once 'model/conexion.php';
-        session_start();
-        $name = $_SESSION['usuario'];
-        echo '<span class="pull-right top title1" ><span class="log1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Hola,</span> <a href="account.php" class="log log1">'.$name.'</a>&nbsp;|
-        <a href="logout.php" class="log"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar Sesión</button></a></span>';
+        if (!isset($_SESSION['usuario'])) {
+          session_start();
+
+        }else{
+          $name = $_SESSION['usuario'];
+          echo '<span class="pull-right top title1" ><span class="log1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Hola,</span> <a href="account.php" class="log log1">'.$name.'</a>&nbsp;|
+          <a href="logout.php" class="log"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar Sesión</button></a></span>';
+        }
+        //session_start();
+        
+      
         ?>
       </div>
         <div class=" container-form btn-toolbar">

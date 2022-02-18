@@ -17,12 +17,19 @@ while($r=$query->fetchObject()){ $marca[]=$r; }
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 
-  <title>Tienda de Vehículos</title>
+  <title>Tienda de Vehículos - Tasación</title>
 </head>
 
 <body>
   <!-- inicio menú -->
-  <?php include 'maqueta/menu.php' ?>
+  <?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    include 'maqueta/menu.php';
+    }else{
+      include 'maqueta/menu_account.php';
+    }
+    ?>
   <!-- fin menú -->
 
   <div id="layoutAuthentication">

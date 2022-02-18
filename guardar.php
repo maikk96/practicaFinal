@@ -16,9 +16,8 @@ $stmt = $bd->query("INSERT INTO usuarios VALUES ('','$nombre', '$apellidos', '$u
 
 if($stmt)
 {
-session_start();
-$_SESSION["usuario"] = $usuario;
-$_SESSION["nombre"] = $nombre;
+//session_start();
+//$_SESSION["usuario"] = $usuario;
 
 header("location:registro_completado.php?q=1");
 }

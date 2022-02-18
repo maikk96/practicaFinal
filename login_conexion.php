@@ -22,7 +22,6 @@ try{
 
     if($count==1){
 
-        $_SESSION["id"] = $id;
         $_SESSION["usuario"] = $usuario;
         header("location:account.php?q=1");
         }

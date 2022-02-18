@@ -19,7 +19,14 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
   </head>
   <body>
     <!-- inicio menú -->
-    <?php include 'maqueta/menu.php' ?>
+    <?php
+  session_start();
+  if (!isset($_SESSION['usuario'])) {
+    include 'maqueta/menu.php';
+  } else {
+    include 'maqueta/menu_account.php';
+  }
+  ?>
     <!-- fin menú -->
 
     <!-- vehiculos -->

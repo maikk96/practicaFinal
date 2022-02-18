@@ -16,15 +16,21 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="css/estilos.css">
-  <title>Tienda de Vehículos</title>
+  <title>Tienda de Vehículo - Vender coche</title>
 </head>
 
 <body>
   <!-- inicio menú -->
-  <?php
-    include 'maqueta/menu_account.php';
 
+  <?php
+  session_start();
+  if (!isset($_SESSION['usuario'])) {
+    include 'maqueta/menu.php';
+  } else {
+    include 'maqueta/menu_account.php';
+  }
   ?>
+
 
   <div class="container  p-10 bg-light">
 
@@ -161,31 +167,31 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
   </div>
 
   <div class=" container card mb-3 mt-5" style="max-width: 540px;">
-  <div class="row g-0">
-  <div class="col-md-4">
-      <img data-lazy-src="//content.compramostucoche.es/static/car_images/precio-garantizado-coche-2.jpg" class="img-responsive visible-xs" alt="Introducir los detalles del coche online" title="" src="//content.compramostucoche.es/static/car_images/precio-garantizado-coche-2.jpg">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img data-lazy-src="//content.compramostucoche.es/static/car_images/precio-garantizado-coche-2.jpg" class="img-responsive visible-xs" alt="Introducir los detalles del coche online" title="" src="//content.compramostucoche.es/static/car_images/precio-garantizado-coche-2.jpg">
       </div>
-  <div class="col-md-8">
-    <div class="card-body">
-      <li>Introduce los datos del coche para obtener el precio final de venta de tu coche.</li>
-      <li>Tú decides si quieres vender o no, ¡sin compromiso!</li>
-      <li>Entrega tu coche en un de nuestras sucursales</li>
+      <div class="col-md-8">
+        <div class="card-body">
+          <li>Introduce los datos del coche para obtener el precio final de venta de tu coche.</li>
+          <li>Tú decides si quieres vender o no, ¡sin compromiso!</li>
+          <li>Entrega tu coche en un de nuestras sucursales</li>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
   </div>
   <div class=" container card mb-3 mt-5" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-    <img data-lazy-src="//content.compramostucoche.es/static/car_images/cita-entrega-precio-garantizado.jpg" class="img-responsive visible-xs" alt="precio final de venta recibido online" title="" src="//content.compramostucoche.es/static/car_images/cita-entrega-precio-garantizado.jpg">
-  </div>
-  <div class="col-md-8">
-    <div class="card-body">
-      <li>Pagamos inmediatamente mediante transferencia bancaria de forma segura. En un plazo de 15 dias laborables</li>
-      <li>Abiertos de lunes a domingo de 08:00h a 22:00h y online las 24/7h</li>
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img data-lazy-src="//content.compramostucoche.es/static/car_images/cita-entrega-precio-garantizado.jpg" class="img-responsive visible-xs" alt="precio final de venta recibido online" title="" src="//content.compramostucoche.es/static/car_images/cita-entrega-precio-garantizado.jpg">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <li>Pagamos inmediatamente mediante transferencia bancaria de forma segura. En un plazo de 15 dias laborables</li>
+          <li>Abiertos de lunes a domingo de 08:00h a 22:00h y online las 24/7h</li>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
   </div>
 
 
