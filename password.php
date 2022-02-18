@@ -1,9 +1,3 @@
-<?php
-include 'model/conexion.php';
-$sentencia = $bd->query('select * from usuarios');
-$usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,17 +30,15 @@ $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
                 <div class="col-lg-5">
                   <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <div class="card-header">
-                      <h3 class="text-center font-weight-light my-4">Login</h3>
+                      <h3 class="text-center font-weight-light my-4">Recuperar contraseña</h3>
                     </div>
                     <div class="card-body">
-                      <form method="POST" action="login_conexion.php">
-                        <div class="form-group"><label class="small mb-1" for="usuario">Usuario</label><input class="form-control py-4" id="usuario" name="usuario" type="text" placeholder="Introducir nombre de usuario" /></div>
-                        <div class="form-group"><label class="small mb-1" for="contraseña">Password</label><input class="form-control py-4" id="contraseña" name="contraseña" type="password" placeholder="Introducir contraseña" /></div>
+                      <form method="POST" action="password_completado.php">
+                        <div class="form-group"><label class="small mb-1" for="usuario">Correo</label><input class="form-control py-4" id="usuario" name="usuario" type="text" placeholder="Introduzca correo" required="" /></div>
                         <div class="form-group">
-                          <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Recordar contraseña</label></div>
                         </div>
-                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="password.php">¿Olvidaste la contraseña?</a>
-                          <button type="submit" class="btn btn-primary">Login</button>
+                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="login.php">¿Quieres iniciar sesión?</a>
+                          <button type="submit" class="btn btn-primary">Recuperar contraseña</button>
                         </div>
                       </form>
                     </div>

@@ -4,16 +4,6 @@ $query = $bd->query("SELECT * FROM marca");
 $marca = array();
 while($r=$query->fetchObject()){ $marca[]=$r; }
 
-$sentencia2 = $bd->prepare("SELECT * FROM modelomarca");
-$sentencia2->execute();
-$modelo = $sentencia2->fetchAll();
-
-/*$consulta = $bd->prepare("SELECT * FROM modelomarca mo, marca m WHERE mo.MarcID=m.MarcID ");
-$consulta->execute();
-$modeloMarca = $consulta->fetchAll();
-$consulta = $bd->prepare("select * from modelomarca where MarcID = '$seleccionada'");
-$consulta->execute();
-$modeloMarca = $consulta->fetchAll();*/
 ?>
 
 <!doctype html>
@@ -50,7 +40,8 @@ $modeloMarca = $consulta->fetchAll();*/
                     <div class="form-row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <select id="MarcID" data-qa-selector="step-marke" class="form-control" name="MarcID">
+                          <select id="MarcID" data-qa-selector="step-marke" class="form-control" name="MarcID" required="" >
+                          <option value="">SELECCIONE MARCA</option>
                             <?php
                             foreach ($marca as $m) :?>
                               <option value="<?php echo $m->MarcID; ?>"><?php echo $m->MarcDesc; ?></option>;
@@ -61,14 +52,14 @@ $modeloMarca = $consulta->fetchAll();*/
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <select id="ModelId" data-qa-selector="step-marke" class="form-control" name="ModelId">
-                          <option value="">-- SELECCIONE --</option>
+                          <select id="ModelId" data-qa-selector="step-marke" class="form-control" name="ModelId" required="" >
+                          <option value="">SELECCIONE MODELO</option>
                           </select>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <select data-qa-selector="step-marke" class="form-control" name="año[]">
+                          <select data-qa-selector="step-marke" class="form-control" id="año" name="año" required="" >
                             <option disable="" value="0">MATRICULACION</option>
                             <option value="1">2022</option>
                             <option value="2">2021</option>
@@ -116,6 +107,7 @@ $modeloMarca = $consulta->fetchAll();*/
   </div>
  <!-- fin vehiculos -->
   <!-- inicio footer -->
+  <?php include 'maqueta/general.php' ?>
   <?php include 'maqueta/footer.php' ?>
 
   <script type="text/javascript">
@@ -127,7 +119,7 @@ $modeloMarca = $consulta->fetchAll();*/
 			});
 		});
 	});
-    
+
 </script>
   <!-- fin footer -->
   <!-- Optional JavaScript -->
