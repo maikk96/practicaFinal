@@ -35,25 +35,25 @@ if (!isset($_SESSION['usuario'])) {
 <h1>¿Quiénes somos?</h1>
 <div style="text-align: justify;"><br style="font-family: Consolas;">
   <span style="font-family: Consolas;">Somos una empresa que se dedica a
-la compra-venta de vehiculos, de momento estamos activos en España,
-vendiendo vehiculos localmente. En un futuro haremos exportaciones del
-extrangero para que puedas tener tu flamante vehiculo nuevo dando igual
-la procedencia del vehiculo. </span><br style="font-family: Consolas;">
+la compra-venta de vehículos, de momento estamos activos en España,
+vendiendo vehículos localmente. En un futuro haremos exportaciones del
+extranjero para que puedas tener tu flamante vehículo nuevo dando igual
+la procedencia del vehiculo o tu lugar de residencia. </span><br style="font-family: Consolas;">
 <br style="font-family: Consolas;">
   <span style="font-family: Consolas;">En cuanto a nuestros servicios
-vendemos vehiculos nuevos, tambien hacemos tasaciones de su vehiculo
-usado.</span><br style="font-family: Consolas;">
+vendemos vehículos nuevos, también hacemos tasaciones gratuitas de su automovil usado.
+</span><br style="font-family: Consolas;">
 <br style="font-family: Consolas;">
 <ul style="font-family: Consolas;">
-  <li><span style="font-weight: bold;">Vehiculos nuevos</span>: Como
-hemos mencionado, vendemos coches nuevos a precios asequibles. Nostros
-nos ocuparemosde enviale un pdf para que firme las condiciones via
-online o si quiere tambien tenemos la opcion de hacer la venta en una
-de uestras oficinas situadas en Madrid (España).</li>
+  <li><span style="font-weight: bold;">Vehículos nuevos</span>: Como
+hemos mencionado, vendemos coches nuevos a precios asequibles. Nosotros
+nos ocuparemos de enviale un pdf para que firme las condiciones vía
+online o si quiere también tenemos la opción de hacer la venta en una
+de nuestras oficinas situadas en Madrid (España).</li>
   <li><span style="font-weight: bold;">Tasaciones:</span> Se puede
 tasar su coche para que sepa el precio de valor de venta que se le
-ofreceria. Nosotros recibiremos la informacion mediante el relleno de
-un formulario web. <br>
+ofrecería. Nosotros recibimos la información mediante el relleno de
+un formulario web y nos ponemos en contacto con usted. <br>
   </li>
 </ul>
 <br>
