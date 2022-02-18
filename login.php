@@ -63,7 +63,6 @@ $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
   </div>
-
   <?php include 'maqueta/general.php' ?>
   <?php include 'maqueta/footer.php' ?>
 

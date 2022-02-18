@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario'])) {
 $varsesion = $_SESSION['usuario'];
 
 if ($varsesion == null || $varsesion = '') {
-  echo 'Usted no tiene autorizacion';
+  header('HTTP/1.0 401 Unauthorized');
   die();
 }
 ?>

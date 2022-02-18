@@ -48,18 +48,18 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                       <h3 class="text-center font-weight-light my-4">Rellene los datos de su vehiculo</h3>
                     </div>
                     <div class="card-body">
-                      <form method="POST" action="#">
-                        <div class="form-group"><input class="form-control py-4" id="nomVehiculo" name="nomVehiculo" type="text" placeholder="Introduce nombre vehiculo" /></div>
-                        <div class="form-group"><input class="form-control py-4" id="precio" name="precio" type="text" placeholder="Introducir precio de venta" /></div>
+                      <form action="actionVender.php" method="POST" >
+                        <div class="form-group"><input class="form-control py-4" id="nombre" name="nombre" type="text" placeholder="Introduce nombre vehiculo" required=""/></div>
+                        <div class="form-group"><input class="form-control py-4" id="precio" name="precio" type="text" placeholder="Introducir precio de venta" required=""/></div>
                         <div class="form-group">
-                          <select data-qa-selector="step-marke" class="form-control" name="tipo[]">
+                          <select data-qa-selector="step-marke" class="form-control" id = "tipo" name="tipo" required="">
                             <option value="0">Tipo de vehiculo</option>
                             <option value="1">Autos</option>
                             <option value="2">Camionetas</option>
                             <option value="3">Deportivos</option>
                           </select>
                           &nbsp;
-                          <select data-qa-selector="step-marke" class="form-control " name="tipo[]">
+                          <select data-qa-selector="step-marke" class="form-control " id="potencia" name="potencia" required="">
                             <option value="0">Potencia</option>
                             <option value="1">
                               <=40cv </option>
@@ -83,7 +83,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             <option value="11"> >=200cv</option>
                           </select>
                           &nbsp;
-                          <select data-qa-selector="step-marke" class="form-control" name="tipo[]">
+                          <select data-qa-selector="step-marke" class="form-control" id="combustible" name="combustible" required="">
                             <option value="0">Combustible</option>
                             <option value="1"> Gasolina </option>
                             <option value="2"> Diesel </option>
@@ -92,7 +92,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             <option value="5"> Hibrido Enchufable </option>
                           </select>
                           &nbsp;
-                          <select data-qa-selector="step-marke" class="form-control" name="tipo[]">
+                          <select data-qa-selector="step-marke" class="form-control" id="año" name="año" required="">
                             <option value="0">Año</option>
                             <option value="1"> 1990</option>
                             <option value="2"> 2000</option>
@@ -119,7 +119,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             <option value="23"> 2021</option>
                           </select>
                           &nbsp;
-                          <select data-qa-selector="step-marke" class="form-control" name="tipo[]">
+                          <select data-qa-selector="step-marke" class="form-control" id = "kilometros"name="kilometros" required="">
                             <option value="0">Kilometros</option>
                             <option value="1">Desde 10.000km</option>
                             <option value="2">Desde 20.000km</option>
@@ -150,8 +150,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             <option value="27">Desde 270.000km</option>
                           </select>
                         </div>
-                        <div class="form-group"><input class="form-control py-4" id="precio" name="precio" type="text" placeholder="Matricula" /></div>
-                        <div class="form-group"><input class="form-control py-4" id="precio" name="precio" type="text" placeholder="Introducir precio de venta" /></div>
+                        <div class="form-group"><input class="form-control py-4" id="matricula" name="matricula" type="text" placeholder="Matricula" required=""/></div>
                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                           <button type="submit" class="btn btn-primary">Vender vehiculo</button>
                         </div>

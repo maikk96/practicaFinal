@@ -26,7 +26,7 @@ try{
         header("location:account.php?q=1");
         }
         else{
-            echo '<p>El usuario y/o clave son incorrectas, vuelva a intentarlo.</p>';
+            echo '<script language="javascript">alert("El usuario o la contraseña son erróneas");window.location.href="login.php"</script>';
         }
 }catch(PDOException $e){
     echo'{"error":{"text":'. $e->getMessage() .'}}';

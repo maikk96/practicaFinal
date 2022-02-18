@@ -29,7 +29,7 @@ include 'model/conexion.php';
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Crear cuenta</h3></div>
                                     <div class="card-body">
-                                        <form action = "guardar.php" method="POST">
+                                        <form action = "guardar.php" method="POST" id="frmRegistro">
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group"><label class="small mb-1">Nombre</label><input class="form-control py-3" name = "nombre"id="nombre" type="text" placeholder="Introduce tu nombre"
@@ -89,3 +89,59 @@ include 'model/conexion.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   </body>
 </html>
+<!--
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#enviar').click(function(){
+
+			if($('#nombre').val()==""){
+				alertify.alert("Debes agregar el nombre");
+				return false;
+			}else if($('#apellidos').val()==""){
+				alertify.alert("Debes agregar el apellido");
+				return false;
+			}else if($('#usuario').val()==""){
+				alertify.alert("Debes agregar el usuario");
+				return false;
+            }else if($('#correo').val()==""){
+				alertify.alert("Debes agregar el correo");
+				return false;
+            }else if($('#telefono').val()==""){
+				alertify.alert("Debes agregar el telefono");
+				return false;
+			}else if($('#contraseña').val()==""){
+				alertify.alert("Debes agregar el password");
+				return false;
+            }else if($('#contraseña_conf').val()==""){
+				alertify.alert("Debes agregar el password");
+				return false;
+			}
+
+			cadena="nombre=" + $('#nombre').val() +
+					"&apellidos=" + $('#apellidos').val() +
+					"&usuario=" + $('#usuario').val() + 
+                    "&correo=" + $('#correo').val() + 
+                    "&telefono=" + $('#telefono').val() + 
+                    "&password=" + $('#password').val() + 
+					"&password_conf=" + $('#password_conf').val();
+
+					$.ajax({
+						type:"POST",
+						url:"registro.php",
+						data:cadena,
+						success:function(r){
+
+							if(r==2){
+								alertify.alert("Este usuario ya existe, prueba con otro :)");
+							}
+							else if(r==1){
+								$('#frmRegistro')[0].reset();
+								alertify.success("Agregado con exito");
+							}else{
+								alertify.error("Fallo al agregar");
+							}
+						}
+					});
+		});
+	});
+</script-->
