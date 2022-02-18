@@ -49,7 +49,6 @@ if (!isset($_SESSION['usuario'])) {
                       <div class="col-md-6">
                         <div class="form-group">
                           <select id="MarcID" data-qa-selector="step-marke" class="form-control" name="MarcID" required="" >
-                          <option value="">SELECCIONE MARCA</option>
                             <?php
                             foreach ($marca as $m) :?>
                               <option value="<?php echo $m->MarcID; ?>"><?php echo $m->MarcDesc; ?></option>;

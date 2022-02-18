@@ -16,7 +16,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="css/estilos.css">
-  <link rel="shortcut icon" href="img/icono.ico">
+    <link rel="shortcut icon" href="img/icono.ico">
 
   <title>Tienda de Vehículo - Vender coche</title>
 </head>
@@ -62,23 +62,23 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                           <select data-qa-selector="step-marke" class="form-control " name="tipo[]">
                             <option value="0">Potencia</option>
                             <option value="1">
-                              <=40cv< /option>
+                              <=40cv </option>
                             <option value="2">
-                              <=50cv< /option>
+                              <=50cv</option>
                             <option value="3">
-                              <=60cv< /option>
+                              <=60cv</option>
                             <option value="4">
-                              <=70cv< /option>
+                              <=70cv</option>
                             <option value="5">
-                              <=80cv< /option>
+                              <=80cv</option>
                             <option value="6">
-                              <=90cv< /option>
+                              <=90cv</option>
                             <option value="7">
-                              <=100cv< /option>
+                              <=100cv</option>
                             <option value="8">
-                              <=110cv< /option>
+                              <=110cv</option>
                             <option value="9">
-                              <=120cv< /option>
+                              <=120cv</option>
                             <option value="10"> >=130cv</option>
                             <option value="11"> >=200cv</option>
                           </select>
