@@ -51,7 +51,7 @@ $stmt = $bd->query("INSERT INTO segundamano VALUES ('$nombre','$precio' ,'$tipo'
                   <h3 class="text-center font-weight-light my-4">Vender vehículo</h3>
                 </div>
                 <div class="card-body">
-                  <h3>Los datos del vehículo se han enviado a nuetros servidores. En breve nos pondremos en contacto con usted</h3>
+                  <h3>Los datos del vehículo se han enviado a nuestros servidores. En breve nos pondremos en contacto con usted</h3>
                 </div>
                 <div class="card-footer text-center">
                   <div class="small"><a href="index.php">Volver</a></div>
