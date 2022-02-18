@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-02-2022 a las 11:41:52
+-- Tiempo de generación: 18-02-2022 a las 13:35:30
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.0
 
@@ -20,10 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `concesionario`
 --
-
--- --------------------------------------------------------
 CREATE DATABASE concesionario;
-use concesionario;
+-- --------------------------------------------------------
+
 --
 -- Estructura de tabla para la tabla `marca`
 --
@@ -528,15 +527,56 @@ INSERT INTO `modelomarca` (`ModelId`, `ModelDesc`, `MarcID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `segundamano`
+--
+
+CREATE TABLE `segundamano` (
+  `nombre` varchar(100) NOT NULL,
+  `precio` int(20) NOT NULL,
+  `tipo` varchar(50) NOT NULL,
+  `potencia` varchar(50) NOT NULL,
+  `combustible` varchar(50) NOT NULL,
+  `año` int(10) NOT NULL,
+  `kilometros` int(20) NOT NULL,
+  `matricula` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `segundamano`
+--
+
+INSERT INTO `segundamano` (`nombre`, `precio`, `tipo`, `potencia`, `combustible`, `año`, `kilometros`, `matricula`) VALUES
+('nombre', 0, '1', '10', '1', 18, 13, 'ds'),
+('nombre', 0, '1', '10', '1', 18, 13, 'ds');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tasacion`
 --
 
 CREATE TABLE `tasacion` (
-  `marca` varchar(50) NOT NULL,
-  `modelo` varchar(50) NOT NULL,
-  `matriculacion` int(11) NOT NULL,
+  `MarcID` varchar(50) NOT NULL,
+  `ModelId` varchar(50) NOT NULL,
+  `año` int(11) NOT NULL,
   `kilometros` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tasacion`
+--
+
+INSERT INTO `tasacion` (`MarcID`, `ModelId`, `año`, `kilometros`) VALUES
+('3', '5', 1, 21),
+('9', '83', 1, 12),
+('9', '83', 1, 12),
+('9', '83', 1, 12),
+('9', '83', 1, 12),
+('9', '83', 1, 12),
+('9', '83', 1, 12),
+('2', '2', 2, 21),
+('2', '2', 2, 21),
+('3', '3', 1, 21);
 
 -- --------------------------------------------------------
 
@@ -551,7 +591,7 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(50) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `telefono` int(20) NOT NULL,
-  `contraseña` varchar(25) NOT NULL
+  `contraseña` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -559,10 +599,19 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `usuario`, `correo`, `telefono`, `contraseña`) VALUES
-(1, 'miguel', 'sanchez', 'maikk', 'miguelhorneros@gmail.com', 628051137, '1234'),
-(2, 'miguel', 'sanchez', 'maikk', 'miguelhorneros@gmail.com', 628051137, '1234'),
-(3, 'Miguel', 'Sanchez', 'maikk96', 'maaikk', 628051139, '$2y$10$trtKSWmU6IROFqEZhm'),
-(4, 'Miguel', 'Sanchez', 'maikk96', 'maaikk', 628051139, '$2y$10$trtKSWmU6IROFqEZhm');
+(1, 'miguel', 'sanchez', 'maikk96', 'miguelhorneros@gmail.com', 628051137, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(2, 'Prueba', 'prueba', 'prueba', 'prueba', 2, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(7, 'asd', 'asd', 'asd', 'das', 0, '6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918'),
+(8, 'Miguel', 'sd', 'sa', 'asd', 0, '6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918'),
+(9, 'dsfas', 'dsf', 'ads', 'sdaf', 0, '6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918'),
+(10, 'Miguel', 'dsfas', 'sdaf', 'sadfsdaf', 0, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(11, 'dsas', 'sadas', 'asd', 'asd', 0, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(12, '2321', 'ds', 'ds', 'asd', 0, '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b'),
+(13, 'Miguel', 'prueba', 'dsfasd', 'asdf', 0, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(14, 'sdfa', 'dsf', 'dfasdf', 'miguelhorneros@gmail.com', 0, 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'),
+(15, 'Miguel', 'sadas', 'maikk96', 'miguelhorneros@gmail.com', 1234, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(16, 'Miguel', 'prueba', 'maikk96', 'miguelhornedddros@gmail.com', 0, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(17, 'Miguel', 'dsf', 'maikk96', 'miguelhodddrneros@gmail.com', 0, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
 
 -- --------------------------------------------------------
 
@@ -655,7 +704,7 @@ ALTER TABLE `modelo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculo`
