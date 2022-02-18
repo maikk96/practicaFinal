@@ -17,7 +17,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="shortcut icon" href="img/icono.ico">
 
-  <title>Tienda de Vehículos</title>
+  <title>Tienda de Vehículos - Camionetas</title>
 </head>
 
 <body>
@@ -43,7 +43,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
         <div class="col-md-4 text-center mt-4">
           <a href="detalle-vehiculo.php?codigo=<?php echo $dato->idVehiculo ?>"><img src="img/<?php echo $dato->foto ?>" class="img-fluid"></a>
           <h2> <?php echo $dato->nomVehiculo; ?> </h2>
-          <p> <?php echo $dato->precio; ?> </p>
+          <h3> <?php echo $dato->precio; ?> € </h3>
           <a href="detalle-vehiculo.php?codigo=<?php echo $dato->idVehiculo ?>" class="btn btn-primary">Ver detalles</a>
         </div>
 

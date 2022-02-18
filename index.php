@@ -40,7 +40,7 @@ $vehiculo = $sentencia->fetchAll(PDO::FETCH_OBJ);
         <div class="col-md-4 text-center mt-4">
           <a href="detalle-vehiculo.php?codigo=<?php echo $dato->idVehiculo ?>"><img src="img/<?php echo $dato->foto ?>" class="img-fluid"></a>
           <h2> <?php echo $dato->nomVehiculo; ?> </h2>
-          <p> <?php echo $dato->precio; ?> </p>
+          <h3> <?php echo $dato->precio; ?> € </h3>
           <a href="detalle-vehiculo.php?codigo=<?php echo $dato->idVehiculo ?>" class="btn btn-primary">Ver detalles</a>
         </div>
 

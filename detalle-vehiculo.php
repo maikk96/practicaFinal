@@ -49,8 +49,8 @@ $vehiculo = $sentencia->fetch(PDO::FETCH_OBJ);
       <img src="img/<?php echo $vehiculo->foto3; ?>"  style="width: 285px; height: 185px;p-4" class="rounded float-end" alt="">
   <div class="card-bodyp-3">
     <h5 class="card-title"> <?php echo $vehiculo->nomVehiculo; ?></h5>
-    <img src="img/icons8-us-dollar-circled.gif" style="width:50px;height:50px;">
-    <p class="card-text"> <small class="text-primary"><?php echo $vehiculo->precio;?>€</small></p>
+    <img src="img/icons8-us-dollar-circled.gif" style="width: 50px; height:50px;">
+    <p class="card-text"> <small class="text-primary"><?php echo $vehiculo->precio;?> €</small></p>
   </div>
   </div>
   <!-- Tabla vehiculo-->
