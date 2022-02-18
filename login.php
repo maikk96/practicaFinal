@@ -15,6 +15,7 @@ $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="shortcut icon" href="img/icono.ico">
 
   <title>Tienda de Vehículos - Log In</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -40,8 +41,8 @@ $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
                     </div>
                     <div class="card-body">
                       <form method="POST" action="login_conexion.php">
-                        <div class="form-group"><label class="small mb-1" for="usuario">Usuario</label><input class="form-control py-4" id="usuario" name="usuario" type="text" placeholder="Introducir nombre de usuario" /></div>
-                        <div class="form-group"><label class="small mb-1" for="contraseña">Password</label><input class="form-control py-4" id="contraseña" name="contraseña" type="password" placeholder="Introducir contraseña" /></div>
+                        <div class="form-group"><label class="small mb-1" for="usuario">Usuario</label><input class="form-control py-4" id="usuario" name="usuario" type="text" placeholder="Introducir nombre de usuario" required=""/></div>
+                        <div class="form-group"><label class="small mb-1" for="contraseña">Password</label><input class="form-control py-4" id="contraseña" name="contraseña" type="password" placeholder="Introducir contraseña"  required=""/></div>
                         <div class="form-group">
                           <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Recordar contraseña</label></div>
                         </div>
